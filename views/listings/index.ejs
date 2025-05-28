@@ -1,0 +1,20 @@
+<% layout("/layouts/biolerplate") %>
+<body>
+  <h1>All Menus</h1>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <% for(let menu of allMenu){%>
+    <a href="/tastytrove/<%=menu._id%>" class="menu-link">
+    <div class="card col" >
+      <img src="<%=menu.image %>" class="card-img-top" alt="menu-image" style="height:20rem;"  >
+      <div class="card-img-overlay"></div>
+      <div class="card-body">
+        <p class="card-text">
+          <b><%=menu.name %></b><br>
+          &#8377;<%=(menu.price || 0).toLocaleString("en-IN") %>/-
+          </p>
+        </div>
+    </div>
+    </a>
+    <% }%>
+  </div>
+</body>
